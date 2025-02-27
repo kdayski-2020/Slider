@@ -20,9 +20,6 @@ window.addEventListener('DOMContentLoaded', function () {
         }
 
         slides.forEach((item) => item.style.display = 'none');
-        // for (let i = 0; i < slides.length; i++) {
-        //     slides[i].style.display = 'none';
-        // }
         dots.forEach((item) => item.classList.remove('dot-active'));
 
         slides[slideIndex - 1].style.display = 'block';
@@ -30,23 +27,23 @@ window.addEventListener('DOMContentLoaded', function () {
     }
 
     function plusSlides(n) {
-        showSlides(slideIndex += n); 
+        showSlides(slideIndex += n);
     }
     function currentSlide(n) {
         showSlides(slideIndex = n);
     }
 
-    prev.addEventListener('click', function() {
+    prev.addEventListener('click', function () {
         plusSlides(-1);
     });
 
-    next.addEventListener('click', function() {
+    next.addEventListener('click', function () {
         plusSlides(1);
     });
 
-    dotsWrap.addEventListener('click', function(event) {
+    dotsWrap.addEventListener('click', function (event) {
         for (let i = 0; i < dots.length + 1; i++) {
-            if (event.target.classList.contains('dot') && event.target == dots[i-1]) {
+            if (event.target.classList.contains('dot') && event.target == dots[i - 1]) {
                 currentSlide(i);
             }
         }
